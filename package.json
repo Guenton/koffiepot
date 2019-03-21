@@ -2,7 +2,7 @@
   "name": "koffiepot",
   "version": "1.0.0",
   "description": "Tool that helps with PAPS grading",
-  "main": "main.js",
+  "main": "core.js",
   "scripts": {
     "start": "electron ."
   },
