@@ -10,10 +10,10 @@
     <div>
       <label for="Quarter">Select Current Quarter</label>
       <select name="Quarter" id="Quarter" required>
-        <option value="Q1">Q1</option>
-        <option value="Q2">Q2</option>
-        <option value="Q3">Q3</option>
-        <option value="Q4">Q4</option>
+        <option value="1">Q1</option>
+        <option value="2">Q2</option>
+        <option value="3">Q3</option>
+        <option value="4">Q4</option>
       </select>
     </div>
     <div>
@@ -40,6 +40,11 @@
     </div>
     <button type="submit">Brew! <i class="material-icons">local_cafe</i></button>
   </form>
+  <div>
+    <ul id=DynamicBrew>
+      <!--list brewed through JS-->
+    </ul>
+  </div>
   <script src="../js/percentPlusBrewer.js"></script>
 </body>
 </html>

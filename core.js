@@ -11,9 +11,9 @@ let percentPlusWindow;
 app.on("ready", function() {
   // Create new window when ready
   mainWindow = new BrowserWindow({
-    webPreferences: {
-      nodeIntegration: false
-    }
+    //webPreferences: {
+    //  nodeIntegration: false
+    //}
   });
   // Load html into window
   mainWindow.loadURL(url.format({
@@ -53,9 +53,10 @@ function createPercentPlusWindow(){
 }
 
 // Catch percentPlus:package
-ipcMain.on("percentPlus:package", function(event, quarter) {
-  mainWindow.webContents.send("percentPlus:package", quarter);
+ipcMain.on("percentPlus:package", function(event, package) {
+  mainWindow.webContents.send("percentPlus:package", package);
   percentPlusWindow.close();
+  console.log(package);
 });
 
 // Create Menu Template

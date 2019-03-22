@@ -8,4 +8,5 @@ ipcRenderer.on("percentPlus:package", function(event, quarter) {
   const itemText = document.createTextNode(quarter);
   li.appendChild(itemText);
   ul.appendChild(li);
+  console.log(quarter);
 });
