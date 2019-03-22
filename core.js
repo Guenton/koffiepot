@@ -2,7 +2,7 @@ const electron = require("electron");
 const url = require("url");
 const path = require("path");
 
-const {app, BrowserWindow, Menu} = electron;
+const {app, BrowserWindow, Menu, ipcMain} = electron;
 
 let mainWindow;
 let percentPlusWindow;
@@ -37,7 +37,7 @@ function createPercentPlusWindow(){
   // Create new window when ready
   percentPlusWindow = new BrowserWindow({
     width: 300,
-    height: 200,
+    height: 400,
     title: "( %+ ) Brewer"
   });
   // Load html into window
@@ -51,6 +51,12 @@ function createPercentPlusWindow(){
     percentPlusWindow = null;
   })
 }
+
+// Catch percentPlus:package
+ipcMain.on("percentPlus:package", function(event, quarter) {
+  mainWindow.webContents.send("percentPlus:package", quarter);
+  percentPlusWindow.close();
+});
 
 // Create Menu Template
 const mainMenuTemplate = [

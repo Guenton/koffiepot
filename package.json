@@ -16,7 +16,7 @@
     "url": "https://github.com/Guenton/koffiepot/issues"
   },
   "homepage": "https://github.com/Guenton/koffiepot#readme",
-  "dependencies": {
+  "devDependencies": {
     "material-icons": "^0.3.0"
   }
 }
