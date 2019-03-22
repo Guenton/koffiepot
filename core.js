@@ -36,8 +36,8 @@ app.on("ready", function() {
 function createPercentPlusWindow(){
   // Create new window when ready
   percentPlusWindow = new BrowserWindow({
-    width: 300,
-    height: 400,
+    width: 350,
+    height: 450,
     title: "( %+ ) Brewer"
   });
   // Load html into window

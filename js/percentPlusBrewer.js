@@ -3,7 +3,7 @@ const {ipcRenderer} = electron;
 
 // html hooks
 const docForm = document.querySelector("#percentPlusForm");
-const docUl = document.querySelector("#DynamicBrew");
+const docEntry = document.querySelector("#DynamicBrew");
 
 // init variables
 let currentQuarter;
@@ -76,8 +76,12 @@ const ulPopulator = (package) => {
     const li = document.createElement("li");
     const liContent = document.createTextNode(package[key]);
     li.appendChild(liContent);
-    docUl.appendChild(li);
+    docEntry.appendChild(li);
   }
+}
+const buttonPopulator = () => {
+  const buttonContent = document.createTextNode(calculatedGrade);
+  docEntry.appendChild(buttonContent);
 }
 
 // Form submit handler
