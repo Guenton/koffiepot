@@ -3,14 +3,20 @@ const url = require("url");
 const path = require("path");
 
 const {app, BrowserWindow, Menu} = electron;
+const nativeImage = electron.nativeImage;
 
 let mainWindow;
 let percentPlusWindow;
+
+let potImage = nativeImage.createFromPath(path.join(__dirname, "/icons/pot.png"));
 
 // Listen for app to be ready first
 app.on("ready", function() {
   // Create new window when ready
   mainWindow = new BrowserWindow({
+    width: 900,
+    height: 771,
+    icon: potImage,
     webPreferences: {
       nodeIntegration: false,
       nodeIntegrationInWorker: false
@@ -40,6 +46,7 @@ function createPercentPlusWindow(){
     width: 350,
     height: 450,
     title: "( %+ ) Brewer",
+    icon: potImage,
     webPreferences: {
       nodeIntegration: false,
       nodeIntegrationInWorker: false
@@ -66,6 +73,12 @@ const mainMenuTemplate = [
         label: "( %+ ) Calculator",
         click(){createPercentPlusWindow();}
       },
+      {label: "( %- ) Calculator"},
+      {label: "( #+ ) Calculator - in development"},
+      {label: "( #- ) Calculator - in development"},
+      {label: "( NC+ ) Calculator - in development"},
+      {label: "( NC- ) Calculator - in development"},
+      {label: "( M ) Calculator - in development"},
       {role: "reload"},
       {
         label: "Exit",

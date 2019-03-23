@@ -6,58 +6,92 @@
   <link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.min.css">
 </head>
 <body>
-  <h1><i class="material-icons">local_cafe</i> koffiePot <i class="material-icons">local_cafe</i></h1>
-  <p>The following Table indicates the margins that the PAPS document uses for calculating ( %+ )</p>
-  <table style="width:100%">
-    <tr>
-      <th></th>
-      <th colspan="2">Yearly % Values</th>
-      <th colspan="2">Average Quarter % Values</th> 
-    </tr>
-    <tr>
-      <th>Grade</th>
-      <th>Min</th>
-      <th>Max</th>
-      <th>Min</th>
-      <th>Max</th>
-    </tr>
-    <tr>
-      <td>E</td>
-      <td>-</td>
-      <td>79.99%</td>
-      <td>-</td>
-      <td>19.99%</td> 
-    </tr>
-    <tr>
-      <td>D</td>
-      <td>80%</td><td>94.99%</td>
-      <td>20.00%</td><td>23.74%</td> 
-    </tr>
-    <tr>
-      <td>C</td>
-      <td>95%</td><td>110.99%</td>
-      <td>23.75%</td><td>27.74%</td> 
-    </tr>
-    <tr>
-      <td>B</td>
-      <td>111%</td><td>125.99%</td>
-      <td>27.75%</td><td>31.49%</td> 
-    </tr>
-    <tr>
-      <td>A</td>
-      <td>126%</td><td>-</td>
-      <td>31.50%</td><td>-</td>
-    </tr>
-  </table>
+
+  <header>
+  <nav class="nav-extended">
+    <div class="nav-wrapper brown darken-4 z-depth-2">
+      <div class="brand-logo center"><i class="material-icons left">local_cafe</i> koffiePot <i class="material-icons right">local_cafe</i></div>
+    </div>
+    <div class="nav-content brown darken-3 z-depth-2">
+      <ul class="tabs tabs-transparent">
+        <li class="tab"><a class="active" href="#percentPlus">( %+ )</a></li>
+        <li class="tab"><a href="#">( %- )</a></li>
+        <li class="tab disabled"><a href="#">( #+ )</a></li>
+        <li class="tab disabled"><a href="#">( #- )</a></li>
+        <li class="tab disabled"><a href="#">( NC+ )</a></li>
+        <li class="tab disabled"><a href="#">( NC- )</a></li>
+        <li class="tab disabled"><a href="#">( M )</a></li>  
+      </ul>
+    </div>
+  </nav>
+  </header>
+
+  <main>
+  <div class="row">
+    <table class="highlight">
+      <tr>
+        <th></th>
+        <th colspan="2">Yearly % Values</th>
+        <th colspan="2">Average Quarter % Values</th> 
+      </tr>
+      <tr>
+        <th>Grade</th>
+        <th>Min</th>
+        <th>Max</th>
+        <th>Min</th>
+        <th>Max</th>
+      </tr>
+      <tr>
+        <td>E</td>
+        <td>-</td>
+        <td>79.99%</td>
+        <td>-</td>
+        <td>19.99%</td> 
+      </tr>
+      <tr>
+        <td>D</td>
+        <td>80%</td><td>94.99%</td>
+        <td>20.00%</td><td>23.74%</td> 
+      </tr>
+      <tr>
+        <td>C</td>
+        <td>95%</td><td>110.99%</td>
+        <td>23.75%</td><td>27.74%</td> 
+      </tr>
+      <tr>
+        <td>B</td>
+        <td>111%</td><td>125.99%</td>
+        <td>27.75%</td><td>31.49%</td> 
+      </tr>
+      <tr>
+        <td>A</td>
+        <td>126%</td><td>-</td>
+        <td>31.50%</td><td>-</td>
+      </tr>
+    </table>
+  </div>
+  </main>
+
+  <footer class="page-footer brown darken-3 z-depth-2">
+    <div class="container">
+      <div class="row">
+        <h6>Directions</h6>
+        <ul>
+          <li>--> Click "File" and select your desired calculator</li>
+          <li>--> Input the number 100 in the "Goal" field of your PAPS PDF</li>
+          <li>--> Match your PAPS PDF dropdown to your selected calculator</li>
+          <li>--> Use the calculator to determine the number that must be placed in the desired quarter</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-copyright green">
+      © 2019 Maduro & Curiel's Group - Security & Investigations
+    </div>
+  </footer>
+
   
-  <h3>Inspiration</h3>
-  <p>
-    koffiePot recognizes that the MCB PAPS system lacks a certain amount of scoring flexibility as well as clarity in order to function well.
-    koffiePot therefore has been designed to shift the rigid, unflexible, and lack of user friendlyness away from the PDF document.
-    koffiePot does all the annoying calculations, so you don't have to. All the department has to do is agree on its own way of calculating "A" to "E" grades.
-    The grade will then be brewed by the koffiePot app and the result will tell you exactly what digits to put into the PDF to get the desired result.
-    You're welcome! ;)
-  </p>
+  
+
   <script src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
   <script src="../js/koffiePot.js"></script>
 </body>

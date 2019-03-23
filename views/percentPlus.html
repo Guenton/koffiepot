@@ -8,7 +8,7 @@
 <body>
 
   <nav>
-    <div class="nav-wrapper indigo darken-4 z-depth-2">
+    <div class="nav-wrapper brown darken-4 z-depth-2">
       <div class="brand-logo center">( %+ ) Grade Calculator</div>
     </div>
   </nav>
@@ -54,9 +54,12 @@
         </div>
         <div class="row">
           <div class="col">
-            <button class="btn-large waves-effect waves-light indigo darken-4 z-depth-2" type="submit">Brew!<i class="material-icons right">local_cafe</i></button>
+            <button class="btn-large waves-effect waves-light brown darken-4 z-depth-2" type="submit">Brew!<i class="material-icons right">local_cafe</i></button>
           </div>
-          <div class="col right"><a class="btn-floating btn-large waves-effect waves-light green z-depth-2" id=DynamicBrew></a></div>
+          <div class="col right">
+            <label for="DynamicBrew">Result:</label>
+            <a class="btn-floating btn-large waves-effect waves-light green z-depth-2"><strong id=DynamicBrew></strong></a>
+          </div>
         </div>
       </form>
     </div>

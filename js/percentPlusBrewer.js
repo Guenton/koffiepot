@@ -72,7 +72,7 @@ const packager = () => {
 // Refresh data in result circle
 const circlePopulator = () => {
   docCircle.innerHTML = "";
-  docCircle.innerHTML = calculatedGrade;
+  docCircle.innerHTML = calculatedGrade.toFixed(2);
 }
 // Quarter change handler
 const displayAdjust = () => {
