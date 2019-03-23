@@ -1,9 +1,10 @@
-const electron = require("electron");
-const {ipcRenderer} = electron;
-
 // html hooks
 const docForm = document.querySelector("#percentPlusForm");
-const docEntry = document.querySelector("#DynamicBrew");
+const docQuarter = document.querySelector("#Quarter");
+const docCircle = document.querySelector("#DynamicBrew");
+const docQ1 = document.querySelector("#Q1");
+const docQ2 = document.querySelector("#Q2");
+const docQ3 = document.querySelector("#Q3");
 
 // init variables
 let currentQuarter;
@@ -68,22 +69,42 @@ const packager = () => {
   if (q2score) {package["q2score"] = q2score;}
   if (q3score) {package["q3score"] = q3score;}
 }
-const ulPopulator = (package) => {
-  while (docUl.firstChild) {
-    docUl.removeChild(docUl.firstChild);
-  }
-  for (const key in package) {
-    const li = document.createElement("li");
-    const liContent = document.createTextNode(package[key]);
-    li.appendChild(liContent);
-    docEntry.appendChild(li);
+// Refresh data in result circle
+const circlePopulator = () => {
+  docCircle.innerHTML = "";
+  docCircle.innerHTML = calculatedGrade;
+}
+// Quarter change handler
+const displayAdjust = () => {
+  setVariables();
+  switch (currentQuarter) {
+    case "1":
+      docQ1.hidden = true;
+      q1score = undefined;
+      docQ2.hidden = true;
+      q2score = undefined;
+      docQ3.hidden = true;
+      q3score = undefined;
+      break;
+    case "2":
+      docQ1.hidden = false;
+      docQ2.hidden = true;
+      q2score = undefined;
+      docQ3.hidden = true;
+      q3score = undefined;
+      break;
+    case "3":
+      docQ1.hidden = false;
+      docQ2.hidden = false;
+      docQ3.hidden = true;
+      q3score = undefined;
+      break;
+    case "4":
+      docQ1.hidden = false;
+      docQ2.hidden = false;
+      docQ3.hidden = false;
   }
 }
-const buttonPopulator = () => {
-  const buttonContent = document.createTextNode(calculatedGrade);
-  docEntry.appendChild(buttonContent);
-}
-
 // Form submit handler
 const submitForm = event => {
   event.preventDefault();
@@ -95,9 +116,19 @@ const submitForm = event => {
     case "4": q4Calculator();
   }
   packager();
-  ulPopulator(package);
-  //ipcRenderer.send("percentPlus:package", package);
+  circlePopulator();
 }
-
-// entry point
+// Listen for change of Quarter input and adjust form
+docQuarter.addEventListener("change", displayAdjust);
+// Listen for submit button press then fire submit handler
 docForm.addEventListener("submit", submitForm);
+// Wait for Dom to load to adjust display
+document.addEventListener("DOMContentLoaded", () => {
+  // Grab select boxes and customize
+  let elems = document.querySelectorAll("select");
+  let instances = M.FormSelect.init(elems);
+  // hide conditional inputs
+  docQ1.hidden = true;
+  docQ2.hidden = true;
+  docQ3.hidden = true;
+});
