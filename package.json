@@ -5,7 +5,8 @@
   "main": "core.js",
   "scripts": {
     "start": "electron .",
-    "dist": "build"
+    "package": "",
+    "build": "electron-packager . koffiePot"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,9 @@
   },
   "homepage": "https://github.com/Guenton/koffiepot#readme",
   "devDependencies": {
-    "electron": "^4.1.1"
+    "asar": "^1.0.0",
+    "electron": "^4.1.1",
+    "electron-packager": "^13.1.1"
   },
   "dependencies": {
     "material-icons": "^0.3.0",

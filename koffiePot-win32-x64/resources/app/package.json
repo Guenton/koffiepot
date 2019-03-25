@@ -1,0 +1,30 @@
+{
+  "name": "koffiepot",
+  "version": "1.0.0",
+  "description": "Tool that helps with PAPS grading",
+  "main": "core.js",
+  "scripts": {
+    "start": "electron .",
+    "package": "",
+    "build": "electron-packager . koffiePot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guenton/koffiepot.git"
+  },
+  "author": "Guenton P.A. Brooks",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Guenton/koffiepot/issues"
+  },
+  "homepage": "https://github.com/Guenton/koffiepot#readme",
+  "devDependencies": {
+    "asar": "^1.0.0",
+    "electron": "^4.1.1",
+    "electron-packager": "^13.1.1"
+  },
+  "dependencies": {
+    "material-icons": "^0.3.0",
+    "materialize-css": "^1.0.0"
+  }
+}
