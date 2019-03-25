@@ -4,7 +4,8 @@
   "description": "Tool that helps with PAPS grading",
   "main": "core.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dist": "build"
   },
   "repository": {
     "type": "git",

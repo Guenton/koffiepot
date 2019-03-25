@@ -69,6 +69,17 @@ const mainMenuTemplate = [
   {
     label: "File",
     submenu: [
+      {role: "reload"},
+      {
+        label: "Exit",
+        accelerator: process.platform == "darwin" ? "Command+Q" : "Ctrl+Q",
+        click(){app.quit();}
+      }
+    ]
+  },
+  {
+    label: "Calculators",
+    submenu: [
       {
         label: "( %+ ) Calculator",
         click(){createPercentPlusWindow();}
@@ -79,12 +90,6 @@ const mainMenuTemplate = [
       {label: "( NC+ ) Calculator - in development"},
       {label: "( NC- ) Calculator - in development"},
       {label: "( M ) Calculator - in development"},
-      {role: "reload"},
-      {
-        label: "Exit",
-        accelerator: process.platform == "darwin" ? "Command+Q" : "Ctrl+Q",
-        click(){app.quit();}
-      }
     ]
   }
 ];
